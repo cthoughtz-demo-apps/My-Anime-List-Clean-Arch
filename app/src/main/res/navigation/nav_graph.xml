@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.myanimelistcleanarchitecture.presentation.fragments.HomeFragment"
+        android:label="@string/home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/discoveryFragment"
+        android:name="com.example.myanimelistcleanarchitecture.presentation.fragments.DiscoveryFragment"
+        android:label="@string/discovery"
+        tools:layout="@layout/fragment_discovery" />
+    <fragment
+        android:id="@+id/seasonalFragment"
+        android:name="com.example.myanimelistcleanarchitecture.presentation.fragments.SeasonalFragment"
+        android:label="@string/seasonal"
+        tools:layout="@layout/fragment_seasonal" />
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.example.myanimelistcleanarchitecture.presentation.fragments.DetailsFragment"
+        android:label="DetailsFragment" />
+    <fragment
+        android:id="@+id/searchedAllFragment"
+        android:name="com.example.myanimelistcleanarchitecture.presentation.fragments.viewpagerfragments.all.SearchedAllFragment"
+        android:label="fragment_searched_all"
+        tools:layout="@layout/fragment_searched_all" />
+    <fragment
+        android:id="@+id/searchedAnimeFragment"
+        android:name="com.example.myanimelistcleanarchitecture.presentation.fragments.viewpagerfragments.all.SearchedAnimeFragment"
+        android:label="fragment_searched_anime"
+        tools:layout="@layout/fragment_searched_anime" />
+    <fragment
+        android:id="@+id/searchedMangaFragment"
+        android:name="com.example.myanimelistcleanarchitecture.presentation.fragments.viewpagerfragments.all.SearchedMangaFragment"
+        android:label="fragment_searched_manga"
+        tools:layout="@layout/fragment_searched_manga" />
+</navigation>

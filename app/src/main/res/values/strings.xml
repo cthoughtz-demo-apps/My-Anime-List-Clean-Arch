@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">MyAnimeList Clean Architecture</string>
+    <string name="home">Home</string>
+    <string name="discovery">Discovery</string>
+    <string name="seasonal">Seasonal</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="anime_description">"This is now the #%d most anticipated anime"</string>
+    <string name="manga_description">"This is now the #%d most anticipated manga"</string>
+    <string name="top_manga">Top Manga</string>
+    <string name="top_anime">Top Anime</string>
+    <string name="recent_watched_episodes">Recent Watched Episodes</string>
+    <string name="popular_episodes">Popular Episodes</string>
+    <string name="recent_promos">Recent Promos</string>
+    <string name="top_upcoming">Top Upcoming</string>
+    <string name="anime_recommendations">Anime Recommendations</string>
+    <string-array name="filter">
+        <item>TV</item>
+        <item>ONA</item>
+        <item>OVA</item>
+        <item>Movie</item>
+        <item>Music</item>
+        <item>Special</item>
+    </string-array>
+    <string name="last_season">Last Season</string>
+    <string name="this_season">This Season</string>
+    <string name="next_season">Next Season</string>
+    <string name="rank">Rank</string>
+    <string name="popularity">Popularity</string>
+    <string name="members">Members</string>
+    <string name="favorites">Favorites</string>
+    <string name="home_fragment">HomeFragment</string>
+    <string name="episodes">%s Ep,</string>
+    <string name="volumes">%d vol, %1d chip</string>
+    <string name="manga">Manga</string>
+    <string name="score_rating">%s/10</string>
+    <string name="anime">Anime</string>
+    <string name="something_went_wrong">Something Went Wrong.</string>
+    <string name="home_fragment_anime">HomeFragmentAnime</string>
+    <string name="home_fragment_manga">HomeFragmentManga</string>
+    <string name="too_many_request">HTTP 429 Too Many Requests</string>
+    <string name="searched_all_fragment">SearchedAllFragment</string>
+    <string name="searched_anime_fragment">SearchedAnimeFragment</string>
+    <string name="searched_manga_fragment">SearchedMangaFragment</string>
+    <string name="all">All</string>
+</resources>

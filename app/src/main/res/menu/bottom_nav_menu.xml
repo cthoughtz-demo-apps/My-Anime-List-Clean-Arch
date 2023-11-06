@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/outline_home"
+        android:title="@string/home"
+        />
+    <item
+        android:id="@+id/discoveryFragment"
+        android:icon="@drawable/outline_search"
+        android:title="@string/discovery"
+        />
+    <item
+        android:id="@+id/seasonalFragment"
+        android:icon="@drawable/baseline_calendar"
+        android:title="@string/seasonal"
+        />
+</menu>

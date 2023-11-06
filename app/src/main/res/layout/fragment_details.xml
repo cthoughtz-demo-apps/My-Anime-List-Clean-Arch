@@ -1,0 +1,558 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".presentation.fragments.DetailsFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/bottomToolbar"
+            android:layout_width="0dp"
+            android:layout_height="?android:attr/actionBarSize"
+            android:background="@color/purple_700"
+            android:orientation="horizontal"
+            android:weightSum="5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/detailScoreLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="15dp"
+                android:text="Score"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/detailScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="25dp"
+                android:drawableStart="@drawable/big_star_24"
+                android:text="N/A"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/detailScoreLabel"
+                app:layout_constraintTop_toBottomOf="@+id/detailScoreLabel" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/imageSliderBorder"
+            android:layout_width="250dp"
+            android:layout_height="300dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeColor="@android:color/black"
+            app:strokeWidth="1dp">
+
+            <ImageView
+                android:id="@+id/detailedFragmentImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/rankedLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:text="@string/rank"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bottomToolbar" />
+
+        <TextView
+            android:id="@+id/ranked"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="N/A"
+            android:textColor="@color/purple_500"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/rankedLabel"
+            app:layout_constraintTop_toBottomOf="@id/rankedLabel" />
+
+        <TextView
+            android:id="@+id/popularityLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="10dp"
+            android:text="@string/popularity"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ranked" />
+
+        <TextView
+            android:id="@+id/popularity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            tools:text="#1121"
+            android:textColor="@color/purple_500"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/popularityLabel" />
+
+        <TextView
+            android:id="@+id/membersLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:text="@string/members"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/popularity" />
+
+        <TextView
+            android:id="@+id/members"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            tools:text="207,027"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/membersLabel"
+            app:layout_goneMarginEnd="10dp" />
+
+        <TextView
+            android:id="@+id/favoritesLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:text="@string/favorites"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/members" />
+
+        <TextView
+            android:id="@+id/favorites"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            tools:text="2,228"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/favoritesLabel"
+            app:layout_goneMarginEnd="10dp" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            tools:text="Kono Subarashii Sekai ni Shukufuku 2o! 3"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/imageSliderBorder" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/seriesInfo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/light_grey"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title">
+
+            <TextView
+                android:id="@+id/type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:gravity="center"
+                android:text="TV" />
+
+            <TextView
+                android:id="@+id/year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                tools:text="2024" />
+
+            <TextView
+                android:id="@+id/aired"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="5dp"
+                android:layout_marginHorizontal="25dp"
+                android:gravity="center"
+                android:text="Not Yet Aired" />
+
+            <TextView
+                android:id="@+id/episode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="EP" />
+
+            <TextView
+                android:id="@+id/duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:gravity="center"
+                tools:text="min:" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <!-- Horizontal-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/genre"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/seriesInfo" />
+
+        <TextView
+            android:id="@+id/synopsis"
+            android:layout_width="0dp"
+            android:layout_height="260dp"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="10dp"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            tools:text="Part two of Dr. Stone: New World:"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/genre" />
+
+        <ImageView
+            android:id="@+id/downArrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/arrow_down"
+            app:layout_constraintTop_toBottomOf="@id/synopsis"
+            app:layout_constraintEnd_toEndOf="@id/synopsis"
+            app:layout_constraintStart_toStartOf="@id/synopsis" />
+
+        <ImageView
+            android:id="@+id/upArrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/arrow_up"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/synopsis"
+            app:layout_constraintEnd_toEndOf="@id/synopsis"
+            app:layout_constraintStart_toStartOf="@id/synopsis" />
+
+        <WebView
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:id="@+id/youtubeVideoWebView"
+            android:layout_marginTop="30dp"
+            android:layout_marginHorizontal="10dp"
+            app:layout_constraintTop_toBottomOf="@id/synopsis"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <TextView
+            android:id="@+id/englishLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="English"
+            android:textSize="15sp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintTop_toBottomOf="@id/youtubeVideoWebView"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="20dp" />
+
+        <TextView
+            android:id="@+id/publishedLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pulished"
+            android:textSize="15sp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintTop_toBottomOf="@id/youtubeVideoWebView"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="20dp" />
+
+        <TextView
+            android:id="@+id/published"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Jun 10, 2011"
+            android:textSize="15sp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintTop_toBottomOf="@id/publishedLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="5dp" />
+
+        <TextView
+            android:id="@+id/serializationLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Serialization"
+            android:textSize="15sp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintTop_toBottomOf="@id/published"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:id="@+id/serialization"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Shounen Gangan"
+            android:textColor="@color/purple_500"
+            android:textSize="15sp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintTop_toBottomOf="@id/serializationLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="5dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/authorsLabel"
+            android:text="Authors"
+            app:layout_constraintTop_toBottomOf="@id/youtubeVideoWebView"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="80dp" />
+
+        <TextView
+            android:id="@+id/authors"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="80dp"
+            android:textColor="@color/purple_500"
+            app:layout_constraintStart_toStartOf="@+id/authorsLabel"
+            app:layout_constraintTop_toBottomOf="@id/authorsLabel"
+            tools:text="Arakawa Hiromu" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/englishTitle"
+            app:layout_constraintTop_toBottomOf="@id/englishLabel"
+            app:layout_constraintStart_toStartOf="@id/englishLabel"
+            tools:text="Fullmetal Alchemist: Brotherhood"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/sourceLabel"
+            app:layout_constraintTop_toBottomOf="@id/englishTitle"
+            app:layout_constraintStart_toStartOf="@id/englishTitle"
+            android:text="Source"
+            android:layout_marginTop="30dp"
+            android:textSize="15sp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Manga"
+            android:textSize="15sp"
+            android:id="@+id/source"
+            app:layout_constraintTop_toBottomOf="@id/sourceLabel"
+            app:layout_constraintStart_toStartOf="@id/sourceLabel"/>
+
+        <TextView
+            android:id="@+id/studioLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:layout_marginTop="30sp"
+            app:layout_constraintTop_toBottomOf="@id/source"
+            app:layout_constraintStart_toStartOf="@id/source"
+            android:text="Studio"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/studio"
+            tools:text="Bones"
+            android:textSize="15sp"
+            android:textColor="@color/purple_500"
+            app:layout_constraintTop_toBottomOf="@id/studioLabel"
+            app:layout_constraintStart_toStartOf="@id/studioLabel" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/ratingLabel"
+            android:text="Rating"
+            app:layout_constraintTop_toBottomOf="@id/studio"
+            app:layout_constraintStart_toStartOf="@id/studio"
+            android:layout_marginTop="30sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/rating"
+            tools:text="R"
+            app:layout_constraintTop_toBottomOf="@id/ratingLabel"
+            app:layout_constraintStart_toStartOf="@id/ratingLabel"/>
+
+        <TextView
+            android:id="@+id/seasonLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Season"
+            android:layout_marginEnd="80dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/sourceLabel"
+            app:layout_constraintBottom_toBottomOf="@id/sourceLabel" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/season"
+            tools:text="Spring 2009"
+            app:layout_constraintTop_toBottomOf="@id/seasonLabel"
+            app:layout_constraintStart_toStartOf="@id/seasonLabel" />
+
+        <TextView
+            android:id="@+id/airedLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Aired"
+            app:layout_constraintStart_toStartOf="@+id/seasonLabel"
+            app:layout_constraintTop_toBottomOf="@id/season" />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/airedDates"
+            tools:text="Apr 5, 2008 to Jul 4, 2010"
+            app:layout_constraintTop_toBottomOf="@id/airedLabel"
+            app:layout_constraintStart_toStartOf="@id/airedLabel"/>
+
+        <TextView
+            android:id="@+id/licensorLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:text="Licensor"
+            app:layout_constraintStart_toStartOf="@+id/airedLabel"
+            app:layout_constraintTop_toBottomOf="@id/airedLabel" />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/licensor"
+            tools:text="Funimation, Aniplex of America"
+            app:layout_constraintTop_toBottomOf="@id/licensorLabel"
+            app:layout_constraintStart_toStartOf="@id/licensorLabel"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/moreInfo"
+            android:text="More Information"
+            android:textColor="@color/purple_500"
+            android:textSize="15sp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintTop_toBottomOf="@id/licensorLabel"
+            android:layout_marginTop="80dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/charactersAndVoiceActor"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            app:layout_constraintTop_toBottomOf="@id/moreInfo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/staffRecycleView"
+            android:layout_marginTop="80dp"
+            android:layout_marginHorizontal="10dp"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/charactersAndVoiceActor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/openingThemeLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:text="Opening Theme"
+            app:layout_constraintTop_toBottomOf="@id/staffRecycleView"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="20dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/openingRecyclerView"
+            app:layout_constraintTop_toBottomOf="@id/openingThemeLabel"
+            android:layout_marginTop="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginHorizontal="15dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/endingThemeLabel"
+            android:text="Ending Theme"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/openingRecyclerView"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="10dp"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/endingThemeRecyclerView"
+            android:layout_marginTop="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/endingThemeLabel"
+            android:layout_marginHorizontal="15dp"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/reviewsRecyclerView"
+            android:layout_width="0dp"
+            android:layout_height="200dp"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/endingThemeRecyclerView" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

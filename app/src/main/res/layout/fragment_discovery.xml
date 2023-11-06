@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".presentation.fragments.DiscoveryFragment">
+
+  <androidx.appcompat.widget.LinearLayoutCompat
+      android:id="@+id/linearLayoutSearchView"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      android:background="@color/purple_700"
+      android:orientation="vertical">
+
+      <androidx.appcompat.widget.SearchView
+          android:id="@+id/discoverySearch"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:background="@drawable/background_white_rounded"
+          android:layout_margin="20dp" />
+  </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <ScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linearLayoutSearchView">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/innerConstraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/recentWatchedEpisodes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:text="@string/recent_watched_episodes"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/recentWatchedEpisodes"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recentWatchedEpRecyclerView"
+                android:layout_width="0dp"
+                android:layout_height="250dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/popularEpisodes" />
+
+            <TextView
+                android:id="@+id/popularEpisodes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:text="@string/popular_episodes"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/recentWatchedEpRecyclerView" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/popularEpisodesRecyclerView"
+                android:layout_width="0dp"
+                android:layout_height="250dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/recentPromos"
+                app:layout_constraintTop_toBottomOf="@id/popularEpisodes" />
+
+            <TextView
+                android:id="@+id/recentPromos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:text="@string/recent_promos"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/popularEpisodesRecyclerView" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recentPromosRecyclerView"
+                android:layout_width="0dp"
+                android:layout_height="250dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/recentPromos" />
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/allViewPager"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tabLayout"
+                android:visibility="gone" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
